@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func main() {
+func runLockingWithChannel() {
 	lock := make(chan bool, 1)
 	for i := 1; i < 7; i++ {
 		go worker(i, lock)
